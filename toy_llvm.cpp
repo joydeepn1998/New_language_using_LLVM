@@ -87,7 +87,26 @@ class NumberExprAST : public ExprAST{
     double Val;
     public :
         NumberExprAST(double Val) : Val(Val){}
-}
+};
+
+//class for referencing variables
+class VariableExprAST : public ExprAST{
+    std::string Name;
+
+    public:
+        VariableExprAST(const std::string &Name) : Name(Name){}
+};
+
+//class for a binary Operator
+class BinaryExprAST : public ExprAST{
+    char Op;
+
+    //unique_ptr - https://www.geeksforgeeks.org/auto_ptr-unique_ptr-shared_ptr-weak_ptr-in-cpp/#
+    std::unique_ptr<ExprAST> LHS, RHS;
+
+    public:
+        BinaryExprAST(char Op, std::unique_ptr<ExprAST> LHS, std::unique_ptr<ExprAST> RHS) : Op(Op), LHS(std::move(LHS)), RHS(std::move(RHS)) {}
+};
 
 
 

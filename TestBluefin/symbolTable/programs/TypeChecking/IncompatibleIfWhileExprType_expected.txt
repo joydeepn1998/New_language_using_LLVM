@@ -1,3 +1,0 @@
-If statement. Expected: 'bool', Found: 'int'
-Operator '-' cannot be applied to 'float' and 'bool'
-While statement. Expected: 'bool', Found: 'string'

@@ -1,6 +1,0 @@
-a - t_bool - t_bool
-true - t_bool - t_bool
-a&&true - t_bool - t_bool
-true - t_bool - t_bool
-false - t_bool - t_bool
-true||false - t_bool - t_bool
